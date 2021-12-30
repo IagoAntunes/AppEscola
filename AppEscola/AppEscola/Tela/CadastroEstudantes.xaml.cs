@@ -14,14 +14,16 @@ namespace AppEscola.Tela
     public partial class CadastroEstudantes : ContentPage
     {
         Picker escolha;
-        public CadastroEstudantes()
+        List<Escola> escolas;
+        public CadastroEstudantes(List<Escola> escola)
         {
             InitializeComponent();
+            this.escolas = escola;
             //HabilitaBotao();
         }
         private void CadastrarEstudante(Object sender, EventArgs args)
         {
-            Gerenciador.estudantes.Add(new Estudante()
+            escolas.Last<Escola>().Estudantes.Add(new Estudante()
             {
                 Nome = txtNome.Text,
                 idade = txtIdade.Text,
@@ -40,7 +42,7 @@ namespace AppEscola.Tela
         private void MoverNext(Object sender, EventArgs args)
         {
             //App.Current.MainPage = new NavigationPage(new Exibir());
-            Navigation.PushAsync(new Tela.Exibir(2));
+            Navigation.PushAsync(new Tela.Exibir(2,escolas));
             //App.Current.MainPage = new NavigationPage(new Tela.Exibir(2));
         }
 

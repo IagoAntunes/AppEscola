@@ -4,10 +4,16 @@ using System.Text;
 
 namespace AppEscola.Modelos
 {
-    public class Gerenciador
+    public class Gerenciador : Escola
     {
-        public static List<Professor> professores = new List<Professor>();
-        public static List<Estudante> estudantes = new List<Estudante>();
+        public Gerenciador()
+        {
+        }
+        public  List<Professor> professores = new List<Professor>();
+        public  List<Estudante> estudantes = new List<Estudante>();
+
+
+ 
 
     }
 }

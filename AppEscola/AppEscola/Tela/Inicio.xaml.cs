@@ -26,5 +26,9 @@ namespace AppEscola.Tela
             //App.Current.MainPage = new NavigationPage(new Tela.CadastroEstudantes());
             await Navigation.PushAsync(new Tela.CadastroEstudantes());
         }
+        private async void GoCadastroEscola(object sender,EventArgs args)
+        {
+            await Navigation.PushAsync(new Tela.CadastroEscola());
+        }
     }
 }

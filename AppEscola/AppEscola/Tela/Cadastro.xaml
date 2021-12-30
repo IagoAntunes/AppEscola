@@ -5,7 +5,6 @@
              BackgroundColor="CadetBlue">
 
     <StackLayout>
-
         <StackLayout BackgroundColor="White" HeightRequest="700" WidthRequest="200" Margin="20">
             <Label Text="Professor" TextColor="Black" FontSize="32" HorizontalTextAlignment="Center"/>
 
@@ -28,18 +27,16 @@
             </Picker>
 
             <Label Text="Escola:" TextColor="Black" FontSize="24" HorizontalTextAlignment="Start"/>
-            <Entry Placeholder="Escola" PlaceholderColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0"
-                   x:Name="txtEscola"/>
+            <Picker TextColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0" 
+                    SelectedIndex="2" SelectedIndexChanged="ActionPicker" x:Name="pickEscolas">
+                <Picker.Items>
+                </Picker.Items>
+            </Picker>
 
             <Button Text="Cadastrar" Margin="20" Clicked="CadastrarProfessor"/>
 
             <Button Text="Proximo" Margin="20" HorizontalOptions="Center" VerticalOptions="EndAndExpand" 
                     Clicked="MoverNext"/>
-
         </StackLayout>
     </StackLayout>
-
-
-
-
 </ContentPage>

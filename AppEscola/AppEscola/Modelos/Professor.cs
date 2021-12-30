@@ -19,10 +19,5 @@ namespace AppEscola.Modelos
         public string Idade { get; set; }
         public string Materia { get; set; }
 
-        public string Escola { get; set; }
-
-
-
-
     }
 }

@@ -11,35 +11,28 @@ using Xamarin.Forms.Xaml;
 namespace AppEscola.Tela
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Cadastro : ContentPage
+    public partial class CadastroEscola : ContentPage
     {
         Picker escolha;
-        List<Escola> escolas;
-        List<String> nomesEscolas = new List<String>();
-        public Cadastro(List<Escola> escolas)
+        public CadastroEscola()
         {
             InitializeComponent();
-            this.escolas = escolas;
-
-            ListaNomesEscolas(escolas);
-            pickEscolas.ItemsSource = nomesEscolas;
         }
-
-        private void CadastrarProfessor(Object sender, EventArgs args)
+        public List<Escola> escolas = new List<Escola>();
+        
+        private void CadastrarEscola(Object sender, EventArgs args)
         {
-            escolas.Last<Escola>().professores.Add(new Professor()
+            escolas.Add(new Escola()
             {
                 Nome = txtNome.Text.Trim(),
-                Idade = txtIdade.Text.Trim(),
-                Materia = escolha.SelectedItem.ToString()
+                Cidade = txtCidade.Text.Trim()
             });
-
             limparCampos();
         }
         private void limparCampos()
         {
             txtNome.Text = string.Empty;
-            txtIdade.Text = string.Empty;
+            txtCidade.Text = string.Empty;
         }
         private void ActionPicker(object sender, EventArgs e)
         {
@@ -47,16 +40,16 @@ namespace AppEscola.Tela
         }
         private void MoverNext(Object sender, EventArgs args)
         {
-            //App.Current.MainPage = new NavigationPage(new Exibir());
             Navigation.PushAsync(new Tela.Exibir(1,escolas));
             //App.Current.MainPage = new NavigationPage(new Tela.Exibir(1));
         }
-        private void ListaNomesEscolas(List<Escola> escolas)
+        private void GoCadastroProfessores(Object sender,EventArgs args)
         {
-            foreach (var escola in escolas)
-            {
-                nomesEscolas.Add(escola.Nome);
-            }
+            Navigation.PushAsync(new Tela.Cadastro(escolas));
+        }
+        private void GoCadastroEstudante(Object sender,EventArgs args)
+        {
+            Navigation.PushAsync(new Tela.CadastroEstudantes(escolas));
         }
     }
 }

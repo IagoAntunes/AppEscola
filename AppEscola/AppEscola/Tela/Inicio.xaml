@@ -3,11 +3,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppEscola.Tela.Inicio">
     <ContentPage.Content>
-        <StackLayout Margin="0,200,0,0">
-            <Button Text="Cadastrar Professores" HorizontalOptions="Center" VerticalOptions="Center"
+        <StackLayout>
+            <StackLayout BackgroundColor="Gray" HeightRequest="150">
+                
+
+            </StackLayout>
+            <StackLayout>
+                <Grid Margin="50">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Frame WidthRequest="100" HeightRequest="100" Grid.Column="0">
+                        <Button Text="Professores" HorizontalOptions="Center" VerticalOptions="Center"
                     Clicked="GoCadastroProfessores"/>
-            <Button Text="Cadastrar Estudantes" HorizontalOptions="Center" VerticalOptions="Center"
+                    </Frame>
+                    <Frame WidthRequest="100" HeightRequest="100" Grid.Column="1">
+                        <Button Text="Estudantes" HorizontalOptions="Center" VerticalOptions="Center"
                     Clicked="GoCadastroEstudantes"/>
+                    </Frame>                  
+                    <Frame WidthRequest="100" HeightRequest="100" Grid.Column="2">
+                        <Button Text="Escola" HorizontalOptions="Center" VerticalOptions="Center"
+                    Clicked="GoCadastroEscola"/>
+                    </Frame>
+                    <Label Text="Ola" Grid.Row="1"/>
+
+                </Grid>
+
+                
+            </StackLayout>
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
