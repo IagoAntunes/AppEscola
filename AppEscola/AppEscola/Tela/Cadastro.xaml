@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppEscola.Tela.Cadastro"
+             BackgroundColor="CadetBlue">
+
+    <StackLayout>
+
+        <StackLayout BackgroundColor="White" HeightRequest="700" WidthRequest="200" Margin="20">
+            <Label Text="Professor" TextColor="Black" FontSize="32" HorizontalTextAlignment="Center"/>
+
+            <Label Text="Nome:" TextColor="Black" FontSize="24" HorizontalTextAlignment="Start"/>
+            <Entry Placeholder="Nome" PlaceholderColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0"
+                   x:Name="txtNome"/>
+
+            <Label Text="Idade:" TextColor="Black" FontSize="24" HorizontalTextAlignment="Start"/>
+            <Entry Placeholder="Idade" PlaceholderColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0"
+                   x:Name="txtIdade"/>
+
+            <Label Text="Materia:" TextColor="Black" FontSize="24" HorizontalTextAlignment="Start"/>
+            <Picker TextColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0" 
+                    SelectedIndex="2" SelectedIndexChanged="ActionPicker">
+                <Picker.Items>
+                    <x:String>Portugues</x:String>
+                    <x:String>Matematica</x:String>
+                    <x:String>Historia</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <Label Text="Escola:" TextColor="Black" FontSize="24" HorizontalTextAlignment="Start"/>
+            <Entry Placeholder="Escola" PlaceholderColor="Black" BackgroundColor="LightBlue" Margin="20,0,20,0"
+                   x:Name="txtEscola"/>
+
+            <Button Text="Cadastrar" Margin="20" Clicked="CadastrarProfessor"/>
+
+            <Button Text="Proximo" Margin="20" HorizontalOptions="Center" VerticalOptions="EndAndExpand" 
+                    Clicked="MoverNext"/>
+
+        </StackLayout>
+    </StackLayout>
+
+
+
+
+</ContentPage>
